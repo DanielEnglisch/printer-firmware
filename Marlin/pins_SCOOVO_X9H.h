@@ -21,28 +21,22 @@
  */
 
 /************************************************
- * Rambo pin assignments MODIFIED FOR A4JP
+ * Rambo pin assignments MODIFIED FOR Scoovo X9H
  ************************************************/
 
 #ifndef __AVR_ATmega2560__
   #error "Oops!  Make sure you have 'Arduino Mega 2560' selected from the 'Tools -> Boards' menu."
 #endif
 
-#define BOARD_NAME "AJ4P"
-
-#define LARGE_FLASH true
-
-/************************************************
- * Rambo pin assignments old
- ************************************************/
+#define BOARD_NAME "Scoovo X9H"
 
 //
 // Servos
 //
-#define SERVO0_PIN 22 // Motor header MX1
-#define SERVO1_PIN 23 // Motor header MX2
-#define SERVO2_PIN 24 // Motor header MX3
-#define SERVO3_PIN  5 // PWM header pin 5
+#define SERVO0_PIN 22   // Motor header MX1
+#define SERVO1_PIN 23   // Motor header MX2
+#define SERVO2_PIN 24   // Motor header MX3
+#define SERVO3_PIN  5   // PWM header pin 5
 
 //
 // Limit Switches
@@ -60,8 +54,6 @@
 #ifndef Z_MIN_PROBE_PIN
   #define Z_MIN_PROBE_PIN   30
 #endif
-
-#define SLED_PIN -1
 
 //
 // Steppers
@@ -99,7 +91,7 @@
 #define E1_MS2_PIN          64
 
 #define DIGIPOTSS_PIN       38
-#define DIGIPOT_CHANNELS {4,5,3,0,1} // X Y Z E0 E1 digipot channels to stepper driver mapping
+#define DIGIPOT_CHANNELS {4,5,3,0,1}   // X Y Z E0 E1 digipot channels to stepper driver mapping
 
 //
 // Temperature Sensors
@@ -114,7 +106,9 @@
 #define HEATER_1_PIN         7
 #define HEATER_BED_PIN       3
 
-#define FAN_PIN              8
+#ifndef FAN_PIN
+  #define FAN_PIN            8
+#endif
 #define FAN1_PIN             6
 #define FAN2_PIN             2
 
@@ -124,26 +118,29 @@
 #define SDSS                53
 #define LED_PIN             13
 #define PS_ON_PIN            4
-#define FILWIDTH_PIN         3   // Analog Input
+
+#ifndef FILWIDTH_PIN
+  #define FILWIDTH_PIN       3   // Analog Input
+#endif
 
 //
 // LCD / Controller
 //
-#define LCD_PINS_RS         70 // Ext2_5
-#define LCD_PINS_ENABLE     71 // Ext2_7
-#define LCD_PINS_D4         72 // Ext2_9 ?
-#define LCD_PINS_D5         73 // Ext2_11 ?
-#define LCD_PINS_D6         74 // Ext2_13
-#define LCD_PINS_D7         75 // Ext2_15 ?
+#define LCD_PINS_RS         70   // Ext2_5
+#define LCD_PINS_ENABLE     71   // Ext2_7
+#define LCD_PINS_D4         72   // Ext2_9 ?
+#define LCD_PINS_D5         73   // Ext2_11 ?
+#define LCD_PINS_D6         74   // Ext2_13
+#define LCD_PINS_D7         75   // Ext2_15 ?
 #define BEEPER_PIN          -1
 
-#define BTN_HOME            80 // Ext_16
-#define BTN_CENTER          81 // Ext_14
+#define BTN_HOME            80   // Ext_16
+#define BTN_CENTER          81   // Ext_14
 #define BTN_ENC             BTN_CENTER
-#define BTN_RIGHT           82 // Ext_12
-#define BTN_LEFT            83 // Ext_10
-#define BTN_UP              84 // Ext2_8
-#define BTN_DOWN            85 // Ext2_6
+#define BTN_RIGHT           82   // Ext_12
+#define BTN_LEFT            83   // Ext_10
+#define BTN_UP              84   // Ext2_8
+#define BTN_DOWN            85   // Ext2_6
 
 #define HOME_PIN            BTN_HOME
 
@@ -154,7 +151,7 @@
   #define DOGLCD_CS         71
   #define LCD_SCREEN_ROT_180
 
-  #define SD_DETECT_PIN     -1 // Pin 72 if using easy adapter board
+  #define SD_DETECT_PIN     -1   // Pin 72 if using easy adapter board
 
   #define STAT_LED_RED_PIN  22
   #define STAT_LED_BLUE_PIN 32

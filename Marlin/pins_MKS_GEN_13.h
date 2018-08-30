@@ -23,23 +23,33 @@
 /**
  * Arduino Mega with RAMPS v1.4 adjusted pin assignments
  *
- *  MKS v1.3  (Extruder, Fan, Bed)
- *  MKS v1.3  (Extruder, Extruder, Fan, Bed)
- *  MKS v1.4  (Extruder, Fan, Bed)
- *  MKS v1.4  (Extruder, Extruder, Fan, Bed)
+ *  MKS GEN v1.3  (Extruder, Fan, Bed)
+ *  MKS GEN v1.3  (Extruder, Extruder, Fan, Bed)
+ *  MKS GEN v1.4  (Extruder, Fan, Bed)
+ *  MKS GEN v1.4  (Extruder, Extruder, Fan, Bed)
  */
 
-#if HOTENDS > 2
-  #error "MKS 1.3/1.4 supports up to 2 hotends. Comment this line to keep going."
+#if HOTENDS > 2 || E_STEPPERS > 2
+  #error "MKS GEN 1.3/1.4 supports up to 2 hotends / E-steppers. Comment out this line to continue."
 #endif
 
-#define BOARD_NAME "MKS > v1.3"
+#define BOARD_NAME "MKS GEN >= v1.3"
 
 //
 // Heaters / Fans
 //
 // Power outputs EFBF or EFBE
 #define MOSFET_D_PIN 7
+
+//
+// PSU / SERVO
+//
+// If POWER_SUPPLY is specified, always hijack Servo 3
+//
+#if POWER_SUPPLY > 0
+  #define SERVO3_PIN      -1
+  #define PS_ON_PIN        4
+#endif
 
 #include "pins_RAMPS.h"
 
