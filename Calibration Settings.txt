@@ -1,0 +1,68 @@
+SENDING:M503
+echo:Steps per unit:
+echo:  M92 X94.12 Y94.12 Z400.00 E105.00
+echo:Maximum feedrates (mm/s):
+echo:  M203 X300.00 Y300.00 Z5.00 E10.00
+echo:Maximum Acceleration (mm/s2):
+echo:  M201 X500 Y500 Z100 E1000
+echo:Accelerations: P=printing, R=retract and T=travel
+echo:  M204 P500.00 R1000.00 T3000.00
+echo:Advanced variables: S=Min feedrate (mm/s), T=Min travel feedrate (mm/s), B=minimum segment time (ms), X=maximum XY jerk (mm/s),  Z=maximum Z jerk (mm/s),  E=maximum E jerk (mm/s)
+echo:  M205 S0.00 T0.00 B20000 X10.00 Y10.00 Z0.40 E5.00
+echo:Home offset (mm)
+echo:  M206 X0.00 Y0.00 Z0.00
+Mesh bed leveling:
+echo:  M420 S1 X3 Y3
+echo:  G29 S3 X1 Y1 Z4.47500
+echo:  G29 S3 X2 Y1 Z4.05000
+echo:  G29 S3 X3 Y1 Z3.40000
+echo:  G29 S3 X1 Y2 Z3.90000
+echo:  G29 S3 X2 Y2 Z3.35000
+echo:  G29 S3 X3 Y2 Z2.72500
+echo:  G29 S3 X1 Y3 Z3.02500
+echo:  G29 S3 X2 Y3 Z2.57500
+echo:  G29 S3 X3 Y3 Z1.92500
+echo:Material heatup parameters:
+echo:  M145 S0 H241 B20 F0
+  M145 S1 H240 B90 F0
+echo:PID settings:
+echo:  M301 P22.20 I1.08 D114.00
+echo:Filament settings: Disabled
+echo:  M200 D3.00
+echo:  M200 D0
+
+
+>>> M501
+SENDING:M501
+echo:V27 stored settings retrieved (398 bytes)
+echo:Steps per unit:
+echo:  M92 X94.12 Y94.12 Z400.00 E105.00
+echo:Maximum feedrates (mm/s):
+echo:  M203 X300.00 Y300.00 Z5.00 E10.00
+echo:Maximum Acceleration (mm/s2):
+echo:  M201 X500 Y500 Z100 E1000
+echo:Accelerations: P=printing, R=retract and T=travel
+echo:  M204 P500.00 R1000.00 T3000.00
+echo:Advanced variables: S=Min feedrate (mm/s), T=Min travel feedrate (mm/s), B=minimum segment time (ms), X=maximum XY jerk (mm/s),  Z=maximum Z jerk (mm/s),  E=maximum E jerk (mm/s)
+echo:  M205 S0.00 T0.00 B20000 X10.00 Y10.00 Z0.40 E5.00
+echo:Home offset (mm)
+echo:  M206 X0.00 Y0.00 Z0.00
+Mesh bed leveling:
+echo:  M420 S1 X3 Y3
+echo:  G29 S3 X1 Y1 Z4.47500
+echo:  G29 S3 X2 Y1 Z4.05000
+echo:  G29 S3 X3 Y1 Z3.40000
+echo:  G29 S3 X1 Y2 Z3.90000
+echo:  G29 S3 X2 Y2 Z3.35000
+echo:  G29 S3 X3 Y2 Z2.72500
+echo:  G29 S3 X1 Y3 Z3.02500
+echo:  G29 S3 X2 Y3 Z2.57500
+echo:  G29 S3 X3 Y3 Z1.92500
+echo:Material heatup parameters:
+echo:  M145 S0 H241 B20 F0
+  M145 S1 H240 B90 F0
+echo:PID settings:
+echo:  M301 P22.20 I1.08 D114.00
+echo:Filament settings: Disabled
+echo:  M200 D3.00
+echo:  M200 D0
